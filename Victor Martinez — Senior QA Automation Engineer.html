@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Martinez — Senior QA Automation Engineer</title>
+  <meta name="description" content="Senior QA Automation Engineer with 10+ years of experience in UI & API automation, CI/CD integration, and backend validation." />
+  <meta property="og:title" content="Victor Martinez — Senior QA Automation Engineer" />
+  <meta property="og:description" content="Senior QA Automation Engineer with 10+ years of experience in UI & API automation." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --surface: #f2f1ed;
+      --border: rgba(0,0,0,0.12);
+      --border-hover: rgba(0,0,0,0.22);
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a55;
+      --text-tertiary: #999992;
+      --accent: #1a1a18;
+      --radius-sm: 8px;
+      --radius-pill: 100px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141412;
+        --surface: #1e1e1b;
+        --border: rgba(255,255,255,0.1);
+        --border-hover: rgba(255,255,255,0.2);
+        --text-primary: #eeeee8;
+        --text-secondary: #a0a09a;
+        --text-tertiary: #666660;
+        --accent: #eeeee8;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+      padding: 4rem 0 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .hero-name {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+    .hero-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-top: 12px;
+    }
+    .hero-location {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .hero-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+    .hero-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-pill);
+      transition: all 0.15s;
+    }
+    .hero-link:hover {
+      border-color: var(--border-hover);
+      background: var(--surface);
+      color: var(--text-primary);
+    }
+    .hero-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* SECTIONS */
+    .section {
+      padding: 3rem 0;
+      border-bottom: 0.5px solid var(--border);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      padding-top: 4px;
+      position: sticky;
+      top: 72px;
+    }
+
+    /* BIO */
+    .bio-text {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      font-weight: 300;
+    }
+    .bio-text + .bio-text { margin-top: 1rem; }
+    .bio-text strong { font-weight: 500; }
+
+    .highlight-bar {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 0.5px solid var(--border);
+    }
+    .highlight-num {
+      font-family: 'Fraunces', serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .highlight-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+      cursor: pointer;
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .exp-role { font-size: 15px; font-weight: 500; }
+    .exp-company { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+    .exp-meta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .exp-period {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .exp-chevron {
+      width: 16px; height: 16px;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .exp-item.open .exp-chevron { transform: rotate(180deg); }
+    .exp-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-top: 12px;
+      display: none;
+    }
+    .exp-item.open .exp-desc { display: block; }
+
+    /* SKILLS */
+    .skills-grid { display: flex; flex-direction: column; gap: 1.75rem; }
+    .skill-group-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      padding: 5px 14px;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+    .skill-tag:hover {
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 3rem 0;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-intro {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      padding: 10px 20px;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .contact-btn svg { width: 18px; height: 18px; color: var(--text-secondary); }
+    .contact-btn:hover { background: var(--surface); border-color: var(--border-hover); }
+    .contact-btn.primary {
+      background: var(--text-primary);
+      color: var(--bg);
+      border-color: var(--text-primary);
+    }
+    .contact-btn.primary svg { color: var(--bg); opacity: 0.8; }
+    .contact-btn.primary:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 0 1rem;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .page { padding: 0 1.25rem 4rem; }
+      .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-links { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+      .section, .contact-section { grid-template-columns: 1fr; gap: 1rem; }
+      .section-label { position: static; }
+      .highlight-bar { gap: 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">VM</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div>
+        <h1 class="hero-name">Victor <em>Martinez</em></h1>
+        <div class="hero-title">Senior QA Automation Engineer</div>
+        <div class="hero-location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2"/></svg>
+          León, Guanajuato, México
+        </div>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/victor-martinez-qualityassurance/" target="_blank" rel="noopener" class="hero-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/victua86/selenium-java-testng-framework" target="_blank" rel="noopener" class="hero-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:victor.martinez.86@outlook.com" class="hero-link" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          Email
+        </a>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-label">
+      <div class="section-label" id="about-label">About</div>
+      <div>
+        <p class="bio-text">Senior QA Automation Engineer with <strong>10+ years</strong> of experience in software testing — specializing in <strong>UI & API automation</strong>, CI/CD integration, and backend validation across enterprise-scale systems.</p>
+        <p class="bio-text">I've led QA strategy for global clients including Microsoft, EY, and Coppel, building scalable Selenium frameworks and driving measurable quality improvements in Agile environments. Bilingual in English and Spanish.</p>
+        <div class="highlight-bar">
+          <div>
+            <div class="highlight-num">10+</div>
+            <div class="highlight-desc">Years of experience</div>
+          </div>
+          <div>
+            <div class="highlight-num">60%</div>
+            <div class="highlight-desc">Regression cycle reduction</div>
+          </div>
+          <div>
+            <div class="highlight-num">25%</div>
+            <div class="highlight-desc">Defect leakage reduction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-label">
+      <div class="section-label" id="exp-label">Experience</div>
+      <div class="exp-list" id="exp-list">
+
+        <div class="exp-item open">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">QA Automation Engineer — Freelance</div>
+              <div class="exp-company">Upwork</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Jan 2026 – Present</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Designing and implementing UI test automation frameworks with Selenium WebDriver, Java, and TestNG. Building scalable POM-based scripts, executing automated regression suites, and collaborating with stakeholders on defect resolution.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Test Manager</div>
+              <div class="exp-company">NTT Data · Client: Coppel</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Dec 2023 – Oct 2025</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Led QA strategy across multiple Agile projects. Managed cross-functional QA teams, promoted Selenium adoption, reduced defect leakage by 25% and test cycle time by 15%. Implemented QA metrics dashboards and oversaw go-live readiness activities.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Senior Quality Analyst</div>
+              <div class="exp-company">TCS · Client: EY</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Mar 2018 – Dec 2023</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Led UAT testing for complex enterprise applications. Designed test cases and RTM using Azure DevOps, developed Selenium UI automation, performed SQL Server backend validation, mentored QA team members, and facilitated stakeholder sign-offs.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Sr. Quality Analyst – Test Lead</div>
+              <div class="exp-company">Nearshore Technology · Client: Beckton & Dickinson</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Jun 2016 – Feb 2018</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Conducted manual and automated testing for regulated medical software. Performed API, performance, and load testing with Postman. Collaborated with BAs and developers on requirements, prepared test documentation, and participated in business sign-offs.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Senior Quality Analyst</div>
+              <div class="exp-company">Accenture · Client: Microsoft</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Aug 2014 – May 2016</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Designed and executed system and API test cases using Postman and VSTS. Performed backend validation for Azure cloud applications, contributed to automation framework discussions, and managed full defect lifecycle.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Backend Tester</div>
+              <div class="exp-company">Accenture · Client: Kitty Hawk</div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period">Apr 2010 – Jun 2014</span>
+              <svg class="exp-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="exp-desc">Executed backend and integration tests validating data consistency across multiple systems. Conducted SQL-based data validations in DB2 and SSMS, tracked defects through Azure DevOps, and collaborated with development teams to enhance API test coverage.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-label">
+      <div class="section-label" id="skills-label">Skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-group-label">Automation & Testing</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Selenium WebDriver</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">TestNG</span>
+            <span class="skill-tag">REST Assured</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">E2E Automation</span>
+            <span class="skill-tag">Page Object Model</span>
+            <span class="skill-tag">Regression Testing</span>
+            <span class="skill-tag">UAT</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">Backend & Data</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">DB2</span>
+            <span class="skill-tag">SSMS</span>
+            <span class="skill-tag">Data Validation</span>
+            <span class="skill-tag">Backend Testing</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">CI/CD & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Jenkins</span>
+            <span class="skill-tag">Maven</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Azure DevOps</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Xray</span>
+            <span class="skill-tag">HP ALM</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-label">Methodology & Cloud</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Kanban</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Azure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-label">
+      <div class="section-label" id="contact-label">Contact</div>
+      <div>
+        <p class="contact-intro">Available for QA Automation roles and freelance projects. Let's connect.</p>
+        <div class="contact-links">
+          <a href="mailto:victor.martinez.86@outlook.com" class="contact-btn primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            Send email
+          </a>
+          <a href="https://www.linkedin.com/in/victor-martinez-qualityassurance/" target="_blank" rel="noopener" class="contact-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/victua86/selenium-java-testng-framework" target="_blank" rel="noopener" class="contact-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Victor Emanuel Martinez Castillo</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('exp-list').addEventListener('click', function(e) {
+      const item = e.target.closest('.exp-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.exp-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  </script>
+
+</body>
+</html>
